@@ -1,0 +1,21 @@
+.contenido{
+    font-size: 20px;
+}
+
+.contenido h2{
+    text-decoration: underline;
+}
+
+p:first-of-type{
+    color: navy;
+    font-weight: bold;
+}
+
+p:nth-child(2){
+    text-transform: uppercase;
+    text-align: justify;
+}
+
+p:last-of-type{
+    font-size: 12px;
+}

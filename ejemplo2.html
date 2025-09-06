@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Usando la etiqueta style</title>
+    <style>
+        body{
+            background-color: #E0E0E0;
+            font-family: Arial, sans-serif;
+        }
+        h1{
+            background-color: #2196f3;
+            color: white;
+            text-align: center;
+        }
+        div.contenido{
+            margin: 0 auto;
+            width: 80%;
+        }
+        p{
+            font-size: 18px;
+        }
+        .cuento{
+            color: navy;
+            text-align: justify;
+        }
+        .parrafo1{
+            font-family: 'Courier New', monospace;
+        }
+        .parrafo2{
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+        .parrafo3{
+            font-family: Georgia, 'Times New Roman', Times, serif;
+        }
+        /* Debido a que la clase "Cuento" contiene los 2 parrafos, entonces, todos los parrafos ahora son de color navy y estan justificados */
+        div.autor{
+            font-style: italic;
+        }
+        p.julio{
+            font-size: 14px;
+        }
+        /* div.autor y p.julio hacen referencia a la clase autor dentro de una division y a la clase julio dentro de un parrafo, se puede utilizar para espicificar cambios a una clase con distintos atributos */
+    </style>
+</head>
+<body>
+    <h1>Instrucciones para llorar</h1>
+    <div class="contenido">
+        <div class="cuento">
+            <p class="cuentoparrafo1">
+                Lorem ipsum dolor sit amet
+                consectetur, adipisicing elit. Cumque, facilis?
+            </p>
+            <p class="cuentoparrafo2">
+                Lorem, ipsum dolor sit amet
+                consectetur adipisicing elit. Voluptatem, a?
+            </p>
+            <p class="cuentoparrafo3">
+                Lorem ipsum 
+                dolor sit amet consectetur adipisicing elit. Deserunt, quos.
+            </p>
+        </div>
+    </div>
+    <div class="autor">
+        <p class="julio">
+            Lorem ipsum dolor sit amet.
+        </p>
+        <p class="julio">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+            Praesentium, impedit doloremque.
+        </p>
+    </div>
+</body>
+</html>
