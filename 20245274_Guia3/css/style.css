@@ -1,0 +1,101 @@
+@import url('https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    font-family: "Mulish", sans-serif;
+    text-align: justify;
+}
+
+header{
+    background: #16a085;
+    height: 130px;
+    overflow: hidden;
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+    top: 0;
+    left: 0;
+}
+
+footer{
+    background: #16a085;
+    height: 50px;
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+    bottom: 0;
+    left: 0;
+}
+
+header div, footer div{
+    width: 80%;
+    margin: 0 auto;
+    color: white;
+}
+
+h1{
+    font-size: 2.3rem;
+    margin-bottom: 1rem;
+    padding-top: 0.5rem;
+}
+
+h2{
+    font-size: 2rem;
+}
+
+section{
+    margin: 0 auto;
+    width: 90%;
+    overflow: hidden;
+    position: relative; /* Como es relativo el articulo se movera desde aca y ya no de body */
+    display: flex;
+    flex-wrap: wrap; 
+    padding-top: 140px;   /* para que se adapte a altura del header */
+    padding-bottom: 60px; /* para que se adapte a la altura del footer */
+}
+
+article{
+    font-size: 0.9rem;
+    height: 340px;
+    width: 32.33%;
+    /*float: left;*/
+    margin: 0.5%;
+    overflow: hidden;
+}
+
+section article img{
+    height: 180px;
+    max-width: 80%;
+    margin: 5px auto;
+    display: block;
+}
+
+section article{
+    border: 2px dashed #16a085;
+    padding: 1%;
+    box-sizing: border-box;
+}
+
+section article h3{
+    text-align: center;
+}
+
+footer div{
+    padding-top: 1rem;
+}
+
+section article:nth-child(2){
+    background-color: rgba(70, 130, 180, 0.9);
+    /*position: relative; el elemento se desplaza a partir de su posicion original, no se mueven los demas articulos porque sigue ocupando su espacio normal*/
+    /*position: absolute;  Los elementos ignoran su posicion (se juntan) y se desplaza desde el contenedor padre */
+    position: static;
+    left: 100px;
+    top: 50px;
+    /*visibility: hidden;*/
+    /*display:none; Visibility mantiene la posicion original del elemento en el documento mientras que display lo elimina por completo del documento*/
+    /* Relativo: desplaza el objeto visualmente desde su posicion original. Absoluto: desplaza el elemento a partir del primer antecesor que tenga un posicionamiento no estático, los demas elementos lo ignoran, por lo que su posición en el doucmento si cambia */
+}
