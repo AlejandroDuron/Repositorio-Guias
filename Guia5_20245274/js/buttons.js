@@ -16,3 +16,13 @@ function capturarDatos() {
 
     alert(`Su nombre es ${nombre} y su edad ${edad}`)
 }
+
+function dibujarParrafo(){
+    let parrafo = prompt(
+        "Escriba la informacion que desea visualizar en el parrafo"
+    )
+
+    /* Usamos la Api DOM para acceder al elemento con id parrafo que creamos en nuestro documento html */
+    const p = document.querySelector("#idParrafo")
+    p.innerHTML = parrafo;
+}
