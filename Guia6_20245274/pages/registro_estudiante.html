@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="../bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="../css/stylesFunciones.css" rel="stylesheet" />
+    <link rel="icon" href="../img/js.png" sizes="32x32" type="image/png" />
+    <title>Validación con Regex</title>
+</head>
+
+<body>
+    <header>
+        <div class="px-3 py-2 text-bg-dark fixed-top">
+            <div class="container">
+                <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+                    <a href="../indexFunciones.html"
+                        class="d-flex align-items-center my-2 my-lg-0 me-lg-auto text-white text-decoration-none">
+                        <img src="../img/js.png" alt="" width="32" height="32" class="me-2" />
+                    </a>
+
+                    <ul class="nav col-12 col-lg-auto my-2 justify-content-center my-md-0 text-small nav-bar">
+                        <li class="text-center">
+                            <a href="recursividad.html" class="nav-link text-white">
+                                <i class="bi bi-arrow-clockwise bi-2 d-block"></i>
+                                Recursividad
+                            </a>
+                        </li>
+                        <li class="text-center">
+                            <a href="tabla.html" class="nav-link text-white">
+                                <i class="bi bi-table bi-2 d-block"></i>
+                                Creando una Tabla
+                            </a>
+                        </li>
+                        <li class="text-center nav-bar-li-active">
+                            <a href="formulario.html" class="nav-link text-white">
+                                <i class="bi bi-ui-checks bi-2 d-block"></i>
+                                Formulario Regex
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class="container-lg">
+        <div class="row">
+            <div class="col-12 shadow-lg p-3 mt-5 bg-body rounded">
+                <h3>Ficha de Estudiante</h3>
+                <form id="idForm">
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div class="form-floating mb-3">
+                                <input type="text" class="form-control" id="idTxtCarnet" placeholder="Ej: AB001" />
+                                <label for="idTxtCarnet">
+                                    <i class="bi bi-card-text"></i> Carnet (Ej: AB001)
+                                </label>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="form-floating mb-3">
+                                <input type="text" class="form-control" id="idTxtNombre"
+                                    placeholder="Nombre completo" />
+                                <label for="idTxtNombre">
+                                    <i class="bi bi-person-circle"></i> Nombre completo
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div class="form-floating mb-3">
+                                <input type="text" class="form-control" id="idTxtDui" placeholder="Ej: 12345678-9" />
+                                <label for="idTxtDui">
+                                    <i class="bi bi-person-vcard"></i> DUI (Ej: 12345678-9)
+                                </label>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="form-floating mb-3">
+                                <input type="text" class="form-control" id="idTxtNit"
+                                    placeholder="Ej: 0000-000000-000-0" />
+                                <label for="idTxtNit">
+                                    <i class="bi bi-postcard"></i> NIT (Ej: 1234-123456-123-1)
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div class="form-floating mb-3">
+                                <input type="text" class="form-control" id="idTxtFechaNacimiento"
+                                    placeholder="DD/MM/AAAA" />
+                                <label for="idTxtFechaNacimiento">
+                                    <i class="bi bi-calendar-date"></i> Fecha Nacimiento (DD/MM/AAAA)
+                                </label>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="form-floating mb-3">
+                                <input type="text" class="form-control" id="idTxtCorreo"
+                                    placeholder="correo@ejemplo.com" />
+                                <label for="idTxtCorreo">
+                                    <i class="bi bi-envelope"></i> Correo electrónico
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div class="form-floating mb-3">
+                                <input type="number" class="form-control" id="idTxtEdad" placeholder="Edad" />
+                                <label for="idTxtEdad">
+                                    <i class="bi bi-123"></i> Edad
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-12 pt-3">
+                            <button id="idBtnAgregar" type="button" class="btn btn-success">
+                                <i class="bi bi-person-plus-fill"></i> Guardar Estudiante
+                            </button>
+                            <button id="idBtnMostrar" type="button" class="btn btn-warning">
+                                <i class="bi bi-people"></i> Mostrar Estudiantes
+                            </button>
+                            <button id="idBtnLimpiar" type="button" class="btn btn-danger">
+                                <i class="bi bi-trash"></i> Limpiar formulario
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+            <div class="col-12 shadow-lg p-3 mt-5 bg-body rounded">
+                <h3>Estudiantes registrados</h3>
+                <div id="idTablaEstudiantes">
+                    Ninguno
+                </div>
+            </div>
+
+        </div>
+
+        <div class="toast-container top-0 start-50 translate-middle-x pt-4 mt-1" style="z-index: 1035;">
+            <div id="idNotificacion" class="toast text-bg-success" role="alert" aria-live="assertive"
+                aria-atomic="true">
+                <div class="toast-header">
+                    <i class="bi bi-bell"></i>
+                    <strong class="me-auto">Notificación</strong>
+                    <small>Hace un momento</small>
+                    <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+                </div>
+                <div class="toast-body" id="idMensaje">
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="../bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="../js/registro_estudiante.js" defer></script>
+</body>
+
+</html>
